@@ -6,7 +6,7 @@
 import httplib,urllib,sys
 
 if (len(sys.argv)<4):
-	print "Welcome, my little kiddy.."
+	print "Welcome, my little kiddy..."
 	print "Usage: %s <host> <vulnerable CGI> <attackhost/IP>" % sys.argv[0]
 	print "Example: %s localhost /cgi-bin/test.cgi 10.0.0.1/8080" % sys.argv[0]
 	exit(0)
